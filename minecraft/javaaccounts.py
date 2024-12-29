@@ -19,15 +19,17 @@ class JavaAccount():
             
         if len(identifier) not in [32, 36]:
             playername = identifier
+            self.playername = playername
             uuid = Endpoints.MOJANG_PROFILE.fetch(playername=playername)["id"]
         else:
             uuid = identifier.replace("-", "")
 
+        self.uuid = uuid
         self.update() # Lädt somit alle anderen Eigenschaften initial
 
-        self.uuid = uuid
-        self.playername = playername
+        
+        
 
     def update(self) -> None:
         "Updates all attributes of the JavaAccount object that may change over time"
-        self.playername = Endpoints.SESSIONSERVER_PROFILE.fetch(uuid=self.uuid)["id"]
+        self.playername = Endpoints.SESSIONSERVER_PROFILE.fetch(uuid=self.uuid)["name"]
