@@ -4,7 +4,7 @@ class JavaAccount():
 
     def __init__(self, identifier: str):
         """
-        Class-Object for fecthing information about an Minecraft Java Edition account
+        Class-Object for fetching information about an Minecraft Java Edition account
 
         #### Arguments:
             identifier (str): The accounts UUID or current playername
