@@ -31,15 +31,20 @@ class Endpoints():
         #### Requires:
             playername (str): The accounts current playername
         #### Contains:
-            "id" (str): The accounts uuid without "-"s
+            "id" (str): The accounts uuid without dashes
             "name" (str): The accounts current playername
     """
 
     SESSIONSERVER_PROFILE = Endpoint("https://sessionserver.mojang.com/session/minecraft/profile/{uuid}")
     """
         #### Requires:
-            uuid (str): The accounts uuid
+            uuid (str): The accounts uuid without dashes
         #### Contains:
-            "id" (str): The accounts uuid without "-"s
+            "id" (str): The accounts uuid without dashes
             "name" (str): The accounts current playername
+            "properties" (list): ...
+                [0] (dict): ...
+                    "name" (str): ...
+                    "value" (str): base64
+            "profileActions" (list): ...
     """
